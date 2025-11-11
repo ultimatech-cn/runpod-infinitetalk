@@ -2,16 +2,16 @@
 FROM runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404
 
 # ===== 升级 pip、setuptools、wheel =====
-RUN pip3 install --upgrade pip setuptools wheel
+RUN python3 -m pip install --upgrade pip setuptools wheel
 
-# ===== 安装 uv（更快的 pip）=====
-RUN pip3 install --no-cache-dir uv
+# ===== 安装 git（comfy-cli 有时需要从 GitHub 拉包） =====
+RUN apt-get update && apt-get install -y git && rm -rf /var/lib/apt/lists/*
 
 # ===== 安装 comfy-cli =====
-RUN uv pip install --upgrade comfy-cli --system
+RUN python3 -m pip install --no-cache-dir --upgrade comfy-cli
 
 # ===== 安装运行时依赖 =====
-RUN uv pip install runpod requests --system
+RUN python3 -m pip install --no-cache-dir runpod requests
 
 # ===== 拷贝代码 =====
 COPY rp_handler.py /rp_handler.py
