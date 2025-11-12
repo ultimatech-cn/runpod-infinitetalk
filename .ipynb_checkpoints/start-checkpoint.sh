@@ -68,6 +68,6 @@ echo "[INFO]: ----- End of comfyui.log -----"
 # Start RunPod Handler
 # ------------------------
 echo "[INFO] Starting RunPod Handler"
-exec python -u /rp_handler.py > /workspace/rp_handler.log 2>&1
+python -u /rp_handler.py > /workspace/rp_handler.log 2>&1
 
 
