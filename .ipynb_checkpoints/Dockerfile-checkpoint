@@ -1,5 +1,5 @@
 # ===== 基础镜像 =====
-FROM runpod/pytorch:1.0.2-cu1281-torch280-ubuntu2404
+FROM runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04
 
 # ===== 升级 pip、setuptools、wheel =====
 RUN python3 -m pip install --upgrade pip setuptools wheel
@@ -16,7 +16,6 @@ RUN python3 -m pip install --no-cache-dir runpod requests
 
 # ===== 拷贝代码 =====
 COPY rp_handler.py /rp_handler.py
-COPY rp_handler1.py /rp_handler1.py
 COPY start.sh /start.sh
 RUN chmod +x /rp_handler.py
 
