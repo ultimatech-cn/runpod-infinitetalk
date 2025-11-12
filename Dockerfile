@@ -16,6 +16,7 @@ RUN python3 -m pip install --no-cache-dir runpod requests
 
 # ===== 拷贝代码 =====
 COPY rp_handler.py /rp_handler.py
+COPY rp_handler1.py /rp_handler1.py
 COPY start.sh /start.sh
 RUN chmod +x /rp_handler.py
 
