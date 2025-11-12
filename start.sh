@@ -58,14 +58,14 @@ while true; do
   sleep 1
 done
 
-echo "[INFO] ? Now you can safely run the following commands..."
+echo "[INFO]:Now you can safely run the following commands..."
 
-echo "[INFO] ?? Full ComfyUI log output:"
+echo "[INFO]:Full ComfyUI log output:"
 cat /tmp/comfyui.log
-echo "[INFO] ?? ----- End of comfyui.log -----"
+echo "[INFO]: ----- End of comfyui.log -----"
 
 # ------------------------
 # Start RunPod Handler
 # ------------------------
-echo "[INFO] ?? Starting RunPod Handler"
-python -u /rp_handler.py
+echo "[INFO]:Starting RunPod Handler"
+python /rp_handler.py
