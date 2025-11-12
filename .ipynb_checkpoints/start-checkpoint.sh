@@ -8,6 +8,7 @@ echo "[INFO] runpod-volume"
 ls -l /runpod-volume
 echo "[INFO] workspace"
 ls -l /workspace
+ls -l / | grep -E "rp_handler\.py|start\.sh"
 
 echo "Starting ComfyUI API"
 
@@ -68,6 +69,6 @@ echo "[INFO]: ----- End of comfyui.log -----"
 # Start RunPod Handler
 # ------------------------
 echo "[INFO] Starting RunPod Handler"
-python -u /rp_handler.py > /workspace/rp_handler.log 2>&1
+python -u /rp_handler.py 
 
 

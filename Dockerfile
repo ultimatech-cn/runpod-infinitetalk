@@ -17,6 +17,7 @@ RUN python3 -m pip install --no-cache-dir runpod requests
 # ===== 拷贝代码 =====
 COPY rp_handler.py /rp_handler.py
 COPY start.sh /start.sh
+RUN chmod +x /rp_handler.py
 
 # ===== 处理脚本换行符并授权执行 =====
 RUN apt-get update && apt-get install -y dos2unix && rm -rf /var/lib/apt/lists/*
